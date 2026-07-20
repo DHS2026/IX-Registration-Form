@@ -212,15 +212,13 @@ function updateNameBox(val) {
  displayBox.innerHTML = upperVal.trim() === "" ? "NAME OF STUDENT<br>(ছাত্রের নাম)" : upperVal;
 }
 
-function printForm() { window.print(); }
-function clearForm() {
- if(confirm("আপনি কি নিশ্চিত?")) {
-  document.getElementById("regForm").reset();
-  document.getElementById("nameDisplayBox").innerHTML = "NAME OF STUDENT<br>(ছাত্রের নাম)";
-  document.getElementById("ageOutput").value = "";
-  document.querySelectorAll('.tick-mark').forEach(t => t.classList.remove('show-tick-live', 'show-tick-print'));
- }
-}
-</script>
+// এই অংশটি আপডেট করা হলো
+function printForm() {
+    if (window.AppInventor) {
+        window.AppInventor.setWebViewString("export_pdf");
+    } else {
+        window.print();
+    }
+}</script>
 </body>
 </html>
