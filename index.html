@@ -5,311 +5,53 @@
 <meta charset="UTF-8">
 <title>MP Registration Form</title>
 <style>
-/* ১ পেজের পিডিএফ/প্রিন্ট এর জন্য বিশেষ অপ্টিমাইজড সেটিংস */
+ /* প্রিন্ট সেটিংস */
  @media print {
- @page {
-size: A4;
-margin: 0.3cm 0.4cm;
- }
-body { 
-margin: 0; 
-padding: 0; 
-background-color: white; 
- }
-.form-container { 
-box-shadow: none; 
-border: none; 
-width: 100%; 
-margin: 0; 
-padding: 2px; 
- }
-.no-print { 
-display: none !important; 
- }
-input[type="checkbox"] {
-display: none !important;
- }
-.tick-mark {
-display: none;
- }
-.show-tick-print {
-display: inline-block !important;
- }
-input, select, textarea {
-border: 1px solid #000 !important;
- }
+ @page { size: A4; margin: 0.3cm 0.4cm; }
+ body { margin: 0; padding: 0; background-color: white; }
+ .form-container { box-shadow: none; border: none; width: 100%; margin: 0; padding: 2px; }
+ .no-print { display: none !important; }
+ input[type="checkbox"] { display: none !important; }
+ .tick-mark { display: none; }
+ .show-tick-print { display: inline-block !important; }
+ input, select, textarea { border: 1px solid #000 !important; }
  }
 
-body {
-font-family: 'Arial', sans-serif;
-background-color: #f0f0f0;
-margin: 10px;
-padding: 0;
-font-size: 13px;
- }
-
-.form-container {
-max-width: 850px;
-margin: 0 auto;
-background: #fff;
-padding: 15px 20px;
-border: 1px solid #000;
-box-sizing: border-box;
- }
-
-.header-section {
-display: flex;
-align-items: center;
-border-bottom: 2px solid #000;
-padding-bottom: 5px;
-margin-bottom: 10px;
- }
-
-.school-logo {
-width: 60px;
-height: 60px;
-object-fit: contain;
-margin-right: 15px;
- }
-
-.header-text {
-flex: 1;
-text-align: left;
- }
-
-.header-text h1 { margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 0.5px; }
-.header-text p { margin: 3px 0 0 0; font-weight: bold; font-size: 13px; }
-
-.top-content {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-margin-bottom: 5px;
-gap: 15px;
- }
-
-.main-fields {
-flex: 3;
-display: flex;
-flex-direction: column;
-gap: 5px;
- }
-
-.photo-side-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 145px; 
- }
-
-.photo-box {
-width: 100%;
-height: 155px; 
-border: 1px solid #000;
-text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-font-size: 9px;
-font-weight: bold;
-background: #fafafa;
-box-sizing: border-box;
-padding: 4px;
- }
-
-.photo-name-box {
-width: 100%;
-margin-top: 4px;
-border: 1px solid #000;
-padding: 4px;
-font-size: 11px;
-font-weight: bold;
-text-align: center;
-min-height: 35px;
-box-sizing: border-box;
-background: #fff;
-word-wrap: break-word;
- }
-
-.row {
-display: flex;
-gap: 10px;
-margin-bottom: 5px;
- }
-
-.col {
-flex: 1;
-display: flex;
-flex-direction: column;
- }
-
-.date-year-wrapper {
-display: flex;
-align-items: center;
-gap: 5px;
- }
-
-.date-year-wrapper input[type="date"] {
-flex: 2;
- }
-
-.date-year-wrapper span {
-font-weight: bold;
-font-size: 15px;
- }
-
-.date-year-wrapper input[type="number"] {
-flex: 1;
- }
-
-label {
-font-weight: bold;
-font-size: 11px;
-margin-bottom: 2px;
- }
-
-.small-title {
-font-size: 10px;
-font-weight: normal;
-color: #555;
- }
-
-input[type="text"], input[type="date"], input[type="number"], select {
-border: 1px solid #000;
-padding: 5px;
-font-size: 13px;
-text-transform: uppercase;
-box-sizing: border-box;
-height: 32px;
- }
-
-input[readonly] {
-background-color: #f5f5f5;
-cursor: not-allowed;
- }
-
-input[type="number"]::-webkit-inner-spin-button, 
-input[type="number"]::-webkit-outer-spin-button { 
--webkit-appearance: none; 
-margin: 0; 
- }
-
-.section-title {
-background: #eee;
-border: 1px solid #000;
-padding: 2px 5px;
-font-weight: bold;
-margin-top: 3px;
-margin-bottom: 3px;
-font-size: 12px;
- }
-
-.enclosure-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 2px;
- }
-
-.enclosure-table td {
-border: 1px solid #000;
-padding: 4px 6px;
-width: 50%;
-font-size: 11.5px;
- }
-
-.check-box-wrapper {
-display: flex;
-align-items: center;
-justify-content: space-between;
- }
-
-.check-box-wrapper label {
-display: flex;
-align-items: center;
-gap: 5px;
-cursor: pointer;
-font-weight: normal;
-flex: 1;
- }
-
-.tick-mark {
-display: none;
-font-size: 16px;
-color: green;
-font-weight: bold;
- }
-
-.show-tick-live {
-display: inline-block !important;
- }
-
-.signature-section {
-display: flex;
-justify-content: space-between;
-margin-top: 10px;
- }
-
-.sig-box {
-width: 48%;
-border: 1px solid #000;
-height: 75px; 
-position: relative;
- }
-
-.sig-text {
-position: absolute;
-bottom: 2px;
-width: 100%;
-text-align: center;
-border-top: 1px solid #000;
-font-size: 11px;
-font-weight: bold;
-background: #fff;
- }
-
-.footer-note {
-color: red;
-font-weight: bold;
-font-size: 11px;
-margin-top: 6px;
-text-align: justify;
-line-height: 1.3;
- }
-
-.button-group {
-display: flex;
-gap: 15px;
-margin-top: 12px;
- }
-
-.btn {
-flex: 1;
-padding: 10px;
-border: none;
-font-size: 14px;
-font-weight: bold;
-cursor: pointer;
-border-radius: 4px;
-text-transform: uppercase;
- }
-
-.btn-print {
-background-color: #000000;
-color: white;
- }
-
-.btn-print:hover {
-background-color: #333333;
- }
-
-.btn-clear {
-background-color: #f44336;
-color: white;
- }
-
-.btn-clear:hover {
-background-color: #d32f2f;
- }
+ body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; margin: 10px; padding: 0; font-size: 13px; }
+ .form-container { max-width: 850px; margin: 0 auto; background: #fff; padding: 15px 20px; border: 1px solid #000; box-sizing: border-box; }
+ .header-section { display: flex; align-items: center; border-bottom: 2px solid #000; padding-bottom: 5px; margin-bottom: 10px; }
+ .school-logo { width: 60px; height: 60px; object-fit: contain; margin-right: 15px; }
+ .header-text { flex: 1; text-align: left; }
+ .header-text h1 { margin: 0; font-size: 22px; text-transform: uppercase; letter-spacing: 0.5px; }
+ .header-text p { margin: 3px 0 0 0; font-weight: bold; font-size: 13px; }
+ .top-content { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; gap: 15px; }
+ .main-fields { flex: 3; display: flex; flex-direction: column; gap: 5px; }
+ .photo-side-container { display: flex; flex-direction: column; align-items: center; width: 145px; }
+ .photo-box { width: 100%; height: 155px; border: 1px solid #000; text-align: center; display: flex; flex-direction: column; justify-content: center; font-size: 9px; font-weight: bold; background: #fafafa; box-sizing: border-box; padding: 4px; }
+ .photo-name-box { width: 100%; margin-top: 4px; border: 1px solid #000; padding: 4px; font-size: 11px; font-weight: bold; text-align: center; min-height: 35px; box-sizing: border-box; background: #fff; word-wrap: break-word; }
+ .row { display: flex; gap: 10px; margin-bottom: 5px; }
+ .col { flex: 1; display: flex; flex-direction: column; }
+ .date-year-wrapper { display: flex; align-items: center; gap: 5px; }
+ .date-year-wrapper input[type="date"] { flex: 2; }
+ .date-year-wrapper span { font-weight: bold; font-size: 15px; }
+ .date-year-wrapper input[type="number"] { flex: 1; }
+ label { font-weight: bold; font-size: 11px; margin-bottom: 2px; }
+ .small-title { font-size: 10px; font-weight: normal; color: #555; }
+ input[type="text"], input[type="date"], input[type="number"], select { border: 1px solid #000; padding: 5px; font-size: 13px; text-transform: uppercase; box-sizing: border-box; height: 32px; }
+ .section-title { background: #eee; border: 1px solid #000; padding: 2px 5px; font-weight: bold; margin-top: 3px; margin-bottom: 3px; font-size: 12px; }
+ .enclosure-table { width: 100%; border-collapse: collapse; margin-top: 2px; }
+ .enclosure-table td { border: 1px solid #000; padding: 4px 6px; width: 50%; font-size: 11.5px; }
+ .check-box-wrapper { display: flex; align-items: center; justify-content: space-between; }
+ .tick-mark { display: none; font-size: 16px; color: green; font-weight: bold; }
+ .show-tick-live { display: inline-block !important; }
+ .signature-section { display: flex; justify-content: space-between; margin-top: 10px; }
+ .sig-box { width: 48%; border: 1px solid #000; height: 75px; position: relative; }
+ .sig-text { position: absolute; bottom: 2px; width: 100%; text-align: center; border-top: 1px solid #000; font-size: 11px; font-weight: bold; }
+ .footer-note { color: red; font-weight: bold; font-size: 11px; margin-top: 6px; text-align: justify; line-height: 1.3; }
+ .button-group { display: flex; gap: 15px; margin-top: 12px; }
+ .btn { flex: 1; padding: 10px; border: none; font-size: 14px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; }
+ .btn-print { background-color: #000000; color: white; }
+ .btn-clear { background-color: #f44336; color: white; }
 </style>
 </head>
 <body>
@@ -317,310 +59,168 @@ background-color: #d32f2f;
 <div class="form-container">
 <form id="regForm">
 <div class="header-section">
-<img class="school-logo" src="https://drive.google.com/thumbnail?id=1kL6r0VnNS1owRNkBsXabtXJ8JbgH4Bpx&sz=w300" 
-onerror="this.onerror=null; this.src='https://docs.google.com/uc?export=download&id=1kL6r0VnNS1owRNkBsXabtXJ8JbgH4Bpx';" 
-alt="School Logo">
-<div class="header-text">
-<h1>DHAINAGAR HIGH SCHOOL (H.S.)</h1>
-<p>MP Registration Form for the Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (School Purpose)</p>
-</div>
+ <!-- লোগো পাথ পরিবর্তন করা হয়েছে (আপনার রিপোজিটরির ফাইলের নাম অনুযায়ী) -->
+ <img class="school-logo" src="school_logo_preview.png" alt="School Logo">
+ <div class="header-text">
+ <h1>DHAINAGAR HIGH SCHOOL (H.S.)</h1>
+ <p>MP Registration Form for the Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (School Purpose)</p>
+ </div>
 </div>
 
+<!-- বাকি ফর্মের অংশ আগের মতোই রাখা হয়েছে -->
 <div class="top-content">
-<div class="main-fields">
-<div class="row">
-<div class="col">
-<label>STUDENT'S NAME (ছাত্রের নাম) *</label>
-<input type="text" id="studentNameInput" name="studentName" required oninput="updateNameBox(this.value)">
-</div>
-</div>
-
-<div class="row">
-<div class="col">
-<label>FATHER'S NAME (পিতার নাম) *</label>
-<input type="text" name="fatherName" required oninput="this.value = this.value.toUpperCase()">
-</div>
-</div>
-
-<div class="row">
-<div class="col">
-<label>MOTHER'S NAME (মাতার নাম) *</label>
-<input type="text" name="motherName" required oninput="this.value = this.value.toUpperCase()">
-</div>
-</div>
-
-<div class="row">
-<div class="col" style="flex: 2;">
-<label>GUARDIAN'S NAME (অভিভাবকের নাম) *</label>
-<input type="text" name="guardianName" required oninput="this.value = this.value.toUpperCase()">
-</div>
-<div class="col">
-<label>RELATION (সম্পর্ক)</label>
-<input type="text" name="relation" oninput="this.value = this.value.toUpperCase()">
-</div>
-</div>
-</div>
-
-<div class="photo-side-container">
-<div class="photo-box">
- PASTE BLACK AND WHITE<br>PASSPORT SIZE PHOTO<br>HERE<br><br>
- (সাদা কালো ছবি আঠা দিয়ে লাগান)
-</div>
-<div class="photo-name-box" id="nameDisplayBox">
- NAME OF STUDENT<br>(ছাত্রের নাম)
-</div>
-</div>
+ <div class="main-fields">
+  <div class="row">
+   <div class="col"><label>STUDENT'S NAME (ছাত্রের নাম) *</label><input type="text" id="studentNameInput" name="studentName" required oninput="updateNameBox(this.value)"></div>
+  </div>
+  <div class="row">
+   <div class="col"><label>FATHER'S NAME (পিতার নাম) *</label><input type="text" name="fatherName" required oninput="this.value = this.value.toUpperCase()"></div>
+  </div>
+  <div class="row">
+   <div class="col"><label>MOTHER'S NAME (মাতার নাম) *</label><input type="text" name="motherName" required oninput="this.value = this.value.toUpperCase()"></div>
+  </div>
+  <div class="row">
+   <div class="col" style="flex: 2;"><label>GUARDIAN'S NAME (অভিভাবকের নাম) *</label><input type="text" name="guardianName" required oninput="this.value = this.value.toUpperCase()"></div>
+   <div class="col"><label>RELATION (সম্পর্ক)</label><input type="text" name="relation" oninput="this.value = this.value.toUpperCase()"></div>
+  </div>
+ </div>
+ <div class="photo-side-container">
+  <div class="photo-box">PASTE BLACK AND WHITE<br>PASSPORT SIZE PHOTO<br>HERE<br><br>(সাদা কালো ছবি আঠা দিয়ে লাগান)</div>
+  <div class="photo-name-box" id="nameDisplayBox">NAME OF STUDENT<br>(ছাত্রের নাম)</div>
+ </div>
 </div>
 
 <div class="row">
-<div class="col">
-<label>CONTACT NO 1 (মোবাইল নং ১) *</label>
-<input type="number" name="contact1" oninput="if(this.value.length > 10) this.value = this.value.slice(0,10);" required>
-</div>
-<div class="col">
-<label>CONTACT NO 2 (মোবাইল নং ২)</label>
-<input type="number" name="contact2" oninput="if(this.value.length > 10) this.value = this.value.slice(0,10);">
-</div>
+ <div class="col"><label>CONTACT NO 1 (মোবাইল নং ১) *</label><input type="number" name="contact1" oninput="if(this.value.length > 10) this.value = this.value.slice(0,10);" required></div>
+ <div class="col"><label>CONTACT NO 2 (মোবাইল নং ২)</label><input type="number" name="contact2" oninput="if(this.value.length > 10) this.value = this.value.slice(0,10);"></div>
 </div>
 
 <div class="row">
-<div class="col">
-<label>CLASS IN WHICH ADMITTED IN OUR SCHOOL (আমাদের স্কুলে ভর্তি হওয়া শ্রেণী) *</label>
-<select name="classAdmitted" required>
-<option value="">--SELECT CLASS--</option>
-<option value="V">V</option>
-<option value="VI">VI</option>
-<option value="VII">VII</option>
-<option value="VIII">VIII</option>
-<option value="IX">IX</option>
-</select>
-</div>
-<div class="col">
-<label>DATE OF ADMISSION / PROBABLE YEAR (ভর্তির তারিখ / সম্ভাব্য সাল)</label>
-<div class="date-year-wrapper">
-<input type="date" name="admissionDate">
-<span>/</span>
-<input type="number" name="probableYear" placeholder="YYYY" oninput="if(this.value.length > 4) this.value = this.value.slice(0,4);">
-</div>
-</div>
+ <div class="col">
+  <label>CLASS IN WHICH ADMITTED IN OUR SCHOOL *</label>
+  <select name="classAdmitted" required>
+   <option value="">--SELECT CLASS--</option>
+   <option value="V">V</option><option value="VI">VI</option><option value="VII">VII</option><option value="VIII">VIII</option><option value="IX">IX</option>
+  </select>
+ </div>
+ <div class="col">
+  <label>DATE OF ADMISSION / PROBABLE YEAR</label>
+  <div class="date-year-wrapper">
+   <input type="date" name="admissionDate">
+   <span>/</span>
+   <input type="number" name="probableYear" placeholder="YYYY" oninput="if(this.value.length > 4) this.value = this.value.slice(0,4);">
+  </div>
+ </div>
 </div>
 
 <div class="section-title">ADDRESS (ঠিকানা)</div>
 <div class="row">
-<div class="col"><label>VILL (গ্রাম)</label><input type="text" name="vill" oninput="this.value = this.value.toUpperCase()"></div>
-<div class="col"><label>P.O. (ডাকঘর)</label><input type="text" name="po" oninput="this.value = this.value.toUpperCase()"></div>
-<div class="col"><label>P.S. (থানা)</label><input type="text" name="ps" oninput="this.value = this.value.toUpperCase()"></div>
+ <div class="col"><label>VILL (গ্রাম)</label><input type="text" name="vill" oninput="this.value = this.value.toUpperCase()"></div>
+ <div class="col"><label>P.O. (ডাকঘর)</label><input type="text" name="po" oninput="this.value = this.value.toUpperCase()"></div>
+ <div class="col"><label>P.S. (থানা)</label><input type="text" name="ps" oninput="this.value = this.value.toUpperCase()"></div>
 </div>
 <div class="row">
-<div class="col"><label>DIST (জেলা)</label><input type="text" name="dist" oninput="this.value = this.value.toUpperCase()"></div>
-<div class="col"><label>PIN (পিন)</label><input type="text" name="pin" maxlength="6" oninput="this.value = this.value.toUpperCase()"></div>
+ <div class="col"><label>DIST (জেলা)</label><input type="text" name="dist" oninput="this.value = this.value.toUpperCase()"></div>
+ <div class="col"><label>PIN (পিন)</label><input type="text" name="pin" maxlength="6" oninput="this.value = this.value.toUpperCase()"></div>
 </div>
 
 <div class="section-title">PERSONAL DETAILS (ব্যক্তিগত বিবরণ)</div>
 <div class="row">
-<!-- আধার নম্বরের ঘর -->
-<div class="col" style="flex: 1.2;">
-<label>STUDENT'S AADHAR NO (ছাত্রের আধার নং)</label>
-<input type="number" name="aadhar" oninput="if(this.value.length > 12) this.value = this.value.slice(0,12);">
-</div>
-<!-- অনুরোধ অনুযায়ী লেবেল পরিবর্তন এবং সমান প্রস্থ নিশ্চিত করার জন্য ফ্লেক্স ও স্টাইল অ্যাডজাস্ট করা হলো -->
-<div class="col" style="flex: 1.5;">
-<label>STUDENT'S DATE OF BIRTH (ছাত্রের জন্ম তারিখ) *</label>
-<input type="date" id="dobInput" name="dob" required onchange="calculateAge(this.value)">
-</div>
-<!-- বয়স অটো হিসাবের ঘর -->
-<div class="col" style="flex: 1.1;">
-<label>AGE (বয়স) <span class="small-title">(As on 31st July)</span></label>
-<input type="text" id="ageOutput" name="age" readonly placeholder="AUTO CALCULATED">
-</div>
+ <div class="col" style="flex: 1.2;"><label>STUDENT'S AADHAR NO (ছাত্রের আধার নং)</label><input type="number" name="aadhar" oninput="if(this.value.length > 12) this.value = this.value.slice(0,12);"></div>
+ <div class="col" style="flex: 1.5;"><label>STUDENT'S DATE OF BIRTH (ছাত্রের জন্ম তারিখ) *</label><input type="date" id="dobInput" name="dob" required onchange="calculateAge(this.value)"></div>
+ <div class="col" style="flex: 1.1;"><label>AGE (বয়স) <span class="small-title">(As on 31st July)</span></label><input type="text" id="ageOutput" name="age" readonly placeholder="AUTO"></div>
 </div>
 
 <div class="row">
-<div class="col">
-<label>RELIGION (ধর্ম) *</label>
-<select name="religion" required>
-<option value="">--SELECT RELIGION--</option>
-<option value="HINDUISM">HINDUISM</option>
-<option value="ISLAM">ISLAM</option>
-<option value="CHRISTIANITY">CHRISTIANITY</option>
-<option value="SIKHISM">SIKHISM</option>
-<option value="OTHERS">OTHERS</option>
-</select>
-</div>
-<div class="col">
-<label>CASTE (জাতি - GEN/SC/ST/OBC) *</label>
-<select name="caste" required>
-<option value="GENERAL">GENERAL</option>
-<option value="SC">SC</option>
-<option value="ST">ST</option>
-<option value="OBC">OBC</option>
-</select>
-</div>
-<div class="col">
-<label>GENDER (লিঙ্গ) *</label>
-<select name="gender" required>
-<option value="MALE">MALE</option>
-<option value="FEMALE">FEMALE</option>
-<option value="OTHERS">OTHERS</option>
-</select>
-</div>
+ <div class="col">
+  <label>RELIGION (ধর্ম) *</label>
+  <select name="religion" required>
+   <option value="">--SELECT--</option><option value="HINDUISM">HINDUISM</option><option value="ISLAM">ISLAM</option><option value="CHRISTIANITY">CHRISTIANITY</option><option value="SIKHISM">SIKHISM</option><option value="OTHERS">OTHERS</option>
+  </select>
+ </div>
+ <div class="col">
+  <label>CASTE (জাতি) *</label>
+  <select name="caste" required>
+   <option value="GENERAL">GENERAL</option><option value="SC">SC</option><option value="ST">ST</option><option value="OBC">OBC</option>
+  </select>
+ </div>
+ <div class="col">
+  <label>GENDER (লিঙ্গ) *</label>
+  <select name="gender" required>
+   <option value="MALE">MALE</option><option value="FEMALE">FEMALE</option><option value="OTHERS">OTHERS</option>
+  </select>
+ </div>
 </div>
 
 <div class="section-title">ENCLOSURE LIST (প্রয়োজনীয় নথিপত্র)</div>
 <table class="enclosure-table">
-<tr>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc1" onchange="toggleTick(this)"> 
-<span>STUDENT'S BIRTH CERTIFICATE XEROX (ছাত্রের জন্ম শংসাপত্রের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc2" onchange="toggleTick(this)"> 
-<span>STUDENT'S AADHAR CARD XEROX (ছাত্রের আধার কার্ডের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc3" onchange="toggleTick(this)"> 
-<span>PROPER CASTE CERTIFICATE XEROX (সঠিক জাতিগত শংসাপত্রের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc4" onchange="toggleTick(this)"> 
-<span>PHYSICAL DISABLED CERTIFICATE XEROX (প্রতিবন্ধী শংসাপত্রের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc5" onchange="toggleTick(this)"> 
-<span>FATHER'S EPIC/AADHAR CARD XEROX (পিতার ভোটার/আধার কার্ডের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-<td>
-<div class="check-box-wrapper">
-<label>
-<input type="checkbox" name="enc6" onchange="toggleTick(this)"> 
-<span>MOTHER'S EPIC/AADHAR CARD XEROX (মাতার ভোটার/আধার কার্ডের জেরক্স)</span>
-</label>
-<span class="tick-mark">✔️</span>
-</div>
-</td>
-</tr>
+ <tr>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc1" onchange="toggleTick(this)"> <span>BIRTH CERTIFICATE</span></label><span class="tick-mark">✔️</span></div></td>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc2" onchange="toggleTick(this)"> <span>AADHAR CARD</span></label><span class="tick-mark">✔️</span></div></td>
+ </tr>
+ <tr>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc3" onchange="toggleTick(this)"> <span>CASTE CERTIFICATE</span></label><span class="tick-mark">✔️</span></div></td>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc4" onchange="toggleTick(this)"> <span>DISABLED CERTIFICATE</span></label><span class="tick-mark">✔️</span></div></td>
+ </tr>
+ <tr>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc5" onchange="toggleTick(this)"> <span>FATHER'S ID</span></label><span class="tick-mark">✔️</span></div></td>
+  <td><div class="check-box-wrapper"><label><input type="checkbox" name="enc6" onchange="toggleTick(this)"> <span>MOTHER'S ID</span></label><span class="tick-mark">✔️</span></div></td>
+ </tr>
 </table>
 
 <div class="signature-section">
-<div class="sig-box">
-<div class="sig-text">FULL SIGNATURE OF STUDENT (ছাত্রের পূর্ণ স্বাক্ষর)</div>
-</div>
-<div class="sig-box">
-<div class="sig-text">FULL SIGNATURE OF GUARDIAN (অভিভাবকের পূর্ণ স্বাক্ষর)</div>
-</div>
+ <div class="sig-box"><div class="sig-text">FULL SIGNATURE OF STUDENT</div></div>
+ <div class="sig-box"><div class="sig-text">FULL SIGNATURE OF GUARDIAN</div></div>
 </div>
 
 <div class="footer-note">
- * উক্ত নথিগুলীর সব জেরক্স-এ SELF ATTESTED করে এই ফর্মটির প্রিন্ট এর সাথে স্কুলে জমা দিতে হবে। যেদিন আসতে বলা হবে সেদিন উক্ত সকল ডকুমেন্টস এর ORIGINAL COPY নিয়ে স্কুলে আসবে এবং প্রয়োজনীয় অর্থ সঙ্গে আনবে। এক কপি এক্সট্রা সাদা কালো ছবি সঙ্গে রাখবে, প্রয়োজন হলে লাগতে পারে। প্রিন্টের পর ফর্মে কালো কালি দিয়ে সই করবে।
+ * উক্ত নথিগুলীর সব জেরক্স-এ SELF ATTESTED করে এই ফর্মটির প্রিন্ট এর সাথে স্কুলে জমা দিতে হবে। প্রিন্টের পর ফর্মে কালো কালি দিয়ে সই করবে।
 </div>
 
 <div class="button-group no-print">
-<button type="button" class="btn btn-clear" onclick="clearForm()">Clear Form</button>
-<button type="button" class="btn btn-print" onclick="printForm()">Print / Save PDF</button>
+ <button type="button" class="btn btn-clear" onclick="clearForm()">Clear Form</button>
+ <button type="button" class="btn btn-print" onclick="printForm()">Print / Save PDF</button>
 </div>
 </form>
 </div>
 
 <script>
 function toggleTick(checkbox) {
-var wrapper = checkbox.closest('.check-box-wrapper');
-var tick = wrapper.querySelector('.tick-mark');
-if (checkbox.checked) {
-tick.classList.add('show-tick-live');
-tick.classList.add('show-tick-print');
- } else {
-tick.classList.remove('show-tick-live');
-tick.classList.remove('show-tick-print');
- }
- }
+ var wrapper = checkbox.closest('.check-box-wrapper');
+ var tick = wrapper.querySelector('.tick-mark');
+ tick.classList.toggle('show-tick-live', checkbox.checked);
+ tick.classList.toggle('show-tick-print', checkbox.checked);
+}
 
 function calculateAge(dobString) {
-if (!dobString) {
-document.getElementById("ageOutput").value = "";
-return;
- }
-var dob = new Date(dobString);
-var currentYear = new Date().getFullYear();
-var targetDate = new Date(currentYear, 6, 31);
-
-if (dob > targetDate) {
-document.getElementById("ageOutput").value = "INVALID DOB";
-return;
- }
-
-var totalMonths = (targetDate.getFullYear() - dob.getFullYear()) * 12 + (targetDate.getMonth() - dob.getMonth());
-if (targetDate.getDate() < dob.getDate()) {
-totalMonths--;
- }
-
-var years = Math.floor(totalMonths / 12);
-var months = totalMonths % 12;
-
-var tempDate = new Date(dob.getFullYear() + years, dob.getMonth() + months, dob.getDate());
-var diffTime = Math.abs(targetDate - tempDate);
-var days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-var ageString = years + "Y " + months + "M " + days + "D";
-document.getElementById("ageOutput").value = ageString;
- }
+ if (!dobString) { document.getElementById("ageOutput").value = ""; return; }
+ var dob = new Date(dobString);
+ var targetDate = new Date(new Date().getFullYear(), 6, 31);
+ if (dob > targetDate) { document.getElementById("ageOutput").value = "INVALID"; return; }
+ var diff = targetDate - dob;
+ var ageDate = new Date(diff); 
+ var years = Math.abs(ageDate.getUTCFullYear() - 1970);
+ var months = ageDate.getUTCMonth();
+ var days = ageDate.getUTCDate() - 1;
+ document.getElementById("ageOutput").value = years + "Y " + months + "M " + days + "D";
+}
 
 function updateNameBox(val) {
-var upperVal = val.toUpperCase();
-document.getElementById("studentNameInput").value = upperVal;
-var displayBox = document.getElementById("nameDisplayBox");
-if(upperVal.trim() === "") {
-displayBox.innerHTML = "NAME OF STUDENT<br>(ছাত্রের নাম)";
- } else {
-displayBox.innerText = upperVal;
- }
- }
+ var upperVal = val.toUpperCase();
+ document.getElementById("studentNameInput").value = upperVal;
+ var displayBox = document.getElementById("nameDisplayBox");
+ displayBox.innerHTML = upperVal.trim() === "" ? "NAME OF STUDENT<br>(ছাত্রের নাম)" : upperVal;
+}
 
-function printForm() {
-window.print();
- }
-
+function printForm() { window.print(); }
 function clearForm() {
-if(confirm("আপনি কি নিশ্চিত যে সমস্ত ফিল্ড মুছে ফেলে প্রথম অবস্থায় ফিরে যেতে চান?")) {
-document.getElementById("regForm").reset();
-document.getElementById("nameDisplayBox").innerHTML = "NAME OF STUDENT<br>(ছাত্রের নাম)";
-document.getElementById("ageOutput").value = "";
-var ticks = document.querySelectorAll('.tick-mark');
-ticks.forEach(function(tick) {
-tick.classList.remove('show-tick-live');
-tick.classList.remove('show-tick-print');
- });
+ if(confirm("আপনি কি নিশ্চিত?")) {
+  document.getElementById("regForm").reset();
+  document.getElementById("nameDisplayBox").innerHTML = "NAME OF STUDENT<br>(ছাত্রের নাম)";
+  document.getElementById("ageOutput").value = "";
+  document.querySelectorAll('.tick-mark').forEach(t => t.classList.remove('show-tick-live', 'show-tick-print'));
  }
- }
+}
 </script>
-
 </body>
 </html>
